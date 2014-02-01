@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>AllAdmin Builds</title>
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/slate/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1>AllAdmin <small>Continuous Integration</small></h1>
+				</div>
+				<div class="panel-body">
+					<p>
+						AllAdmin is an administration mod created by Gravypod.</br>
+						If you like his work donate to him, or use the adf.ly links below.</br>
+						All links with the name "Download" send you to adf.ly, <strong>all links with the name * send you to a direct download link</strong>.</br><br>
+						<a class="btn" href="https://github.com/gravypod/AllAdmin/"><i class="fa fa-github-alt"></i> Source Code</a>
+						<a class="btn" href="{$latest}"><i class="fa fa-cog"></i> Latest Version Download</a>
+						<a class="btn" href="mailto://gravypod@gravypod.com"><i class="fa fa-money"></i> Donate</a>
+					</p>
+				</div>
+				<table class="table">
+					<thead>
+						<th>AllAdmin Version</th>
+						<th>Release Date</th>
+						<th>Forge Version</th>
+						<th>Minecraft Version</th>
+						<th>Download Link</th>
+					</thead>
+					<tbody>
+						{loop="builds"}
+						<tr>
+							<td>{$value.aaver}</td>
+							<td>{$value.creation}</td>
+							<td>{$value.forgever}</td>
+							<td>{$value.mcver}</td>
+							<td><a href="{$value.adfly}"><i class="fa fa-floppy-o"></i> Download</a> | <a href="{$value.direct}">*</a></td>
+						</tr>
+						{/loop}
+					</tbody>
+				</table>
+				
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h3><i class="fa fa-list-alt"></i> Changelog</h3>
+				</div>
+				<div class="panel-body">
+					{loop="changelogs"}
+						<div class="panel panel-default">
+							<div class="panel-heading">{$key}</div>
+							<div class="panel-body">
+								<pre>{$value}</pre>
+							</div>
+						</div>
+					{/loop}
+				</div>
+				<div class="panel-footer">&copy; Joshua (gravypod) Katz 2014</div>
+			</div>
+		</div>
+	</body>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</html>
